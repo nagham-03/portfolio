@@ -50,7 +50,7 @@
    
     <script>
         function validateForm(event) {
-            event.preventDefault(); // منع إعادة تحميل الصفحة
+            event.preventDefault(); 
 
             var name = document.getElementById("fullname").value.trim();
             var email = document.getElementById("email").value.trim();
@@ -60,20 +60,19 @@
             errorElement.innerText = "";
             errorElement.style.color = "red";
 
-            // 1. التاكد من تعبئة جميع الحقول
+           
             if (name === "" || email === "" || message === "") {
                 errorElement.innerText = "Please fill in all the required fields!";
                 return false;
             }
 
-            // 2. التحقق من صيغة الإيميل (@ و .)
+            
             var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailPattern.test(email)) {
                 errorElement.innerText = "Please enter a valid email address!";
                 return false;
             }
 
-            // عند النجاح
             errorElement.style.color = "green";
             errorElement.innerText = "Thank you, " + name + "! Your message has been sent successfully.";
             
